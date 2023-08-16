@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Open+Sans:wght@400;700&family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "poppins";
+}
+main{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+}
+.panel{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.panel.welcome{
+    background-color: #323230;
+    padding: 20px 30px;
+    grid-auto-rows:1fr;
+    /* grid-template-rows: repeat(1fr,3); */
+}
+.welcome nav a{
+    text-decoration: none;
+    color: #a8a8a8;
+    margin-right: 20px;
+}
+.welcome div h1{
+    color:#eeeee7;
+    font-size: 4em;
+}
+.welcome div h3{
+    color:#a8a8a8;
+    font-weight: 500;
+    width:400px;
+    line-height: 2em;
+    font-size: 1.1rem;
+}
+.welcome footer{
+    align-self: end;
+    color: #a8a8a8;
+}
+
+.panel.about{
+    grid-template-rows: 3fr 1fr;
+    /* overflow: hidden; */
+}
+.panel.about img{
+    height: 100%;
+    width: 100%;
+}
+
+.panel.photos{
+    grid-template-rows:1fr 3fr;
+    overflow: hidden;
+}
+.panel.photos img{
+    height: 100%;
+    width: 100%;
+}
+.text{
+    background: #eeeee7;
+    color: #a8a8a8;
+    padding:30px 60px;
+}
+.text h3{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* reponsive */
+
+@media screen and (max-width:1000px){
+    main{
+        grid-template-columns: 1fr 1fr;
+    }
+    .panel.photos{
+        grid-column: 1/span 2;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+@media screen and (max-width:800px){
+    main{
+        grid-template-columns: 100%;
+        grid-template-rows: 650px 400px 400px;
+    }
+    .panel.about{
+        grid-row: 2;
+        grid-template-columns: 1fr 1fr;
+    }
+    .panel.panel.about img{
+        width: 100%;
+    }
+}
+@media screen and (max-width:540px){
+    main{
+        grid-template-rows: 700px 900px 600px;
+    }
+    .panel.about,.panel.photos{
+        grid-template-columns: 1fr;
+        grid-column: span 1;
+        grid-template-rows: 1fr 1fr;
+        border-bottom: 1px solid #dcdcd0;
+    }
+}
